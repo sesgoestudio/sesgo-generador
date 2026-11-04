@@ -1172,7 +1172,7 @@ antes de publicar.
 
   const blob = await zip.generateAsync({type:"blob"});
   const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
+  const link = document.createElement("a"); 
 
   const filename = (data.projectName || "sitio-juridico")
     .toLowerCase()
