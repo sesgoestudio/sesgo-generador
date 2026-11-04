@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SESGO — Generador de portadas</title>
+<style>
+:root{--navy:#10243a;--accent:#b68b58;--paper:#f5f6f4;--ink:#172536;--muted:#687582;--line:#dfe4e6}
+*{box-sizing:border-box}body{margin:0;background:#eef1f3;color:var(--ink);font:14px/1.5 Inter,system-ui,sans-serif}
+header{background:var(--navy);color:white;padding:22px max(24px,calc((100vw - 1320px)/2));display:flex;justify-content:space-between;align-items:center;gap:20px}
+header strong{letter-spacing:.16em;font-size:13px}header span{color:#c4d0d9;font-size:12px}
+main{max-width:1320px;margin:24px auto;padding:0 20px;display:grid;grid-template-columns:390px 1fr;gap:20px}
+.panel,.preview{background:white;border:1px solid #e2e7e9;border-radius:12px;overflow:hidden}
+.panel{padding:22px;max-height:calc(100vh - 112px);overflow:auto}
+h1{font-size:20px;margin:0 0 5px}h2{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#8b6c46;margin:24px 0 12px}
+.hint{color:var(--muted);font-size:12px;margin:0 0 18px}
+label{display:block;font-size:12px;font-weight:650;margin:12px 0 5px}
+input,textarea,select{width:100%;padding:10px 11px;border:1px solid #d8dfe3;border-radius:7px;font:inherit;color:var(--ink);background:#fff}
+textarea{min-height:74px;resize:vertical}input:focus,textarea:focus,select:focus{outline:2px solid #c4d4e1;border-color:#7793a8}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.palette-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.palette{border:1px solid #d8dfe3;background:#fff;border-radius:8px;padding:8px;text-align:left;cursor:pointer;font-size:11px}
+.swatches{display:flex;gap:4px;margin-bottom:6px}.swatches i{width:18px;height:18px;border-radius:50%;display:block}
+.palette.active,.variant.active{border:2px solid var(--navy);padding:7px}
+.variant-row{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.variant{border:1px solid #d8dfe3;border-radius:8px;background:white;padding:10px;text-align:left;cursor:pointer}
+.variant b{display:block;font-size:12px}.variant small{color:var(--muted)}
+.actions{position:sticky;bottom:-22px;background:white;padding:16px 0 0;margin-top:20px;border-top:1px solid var(--line);display:flex;gap:8px}
+button.primary,button.secondary{border:0;border-radius:7px;padding:12px 14px;font-weight:700;cursor:pointer}
+.primary{background:var(--navy);color:white;flex:1}.secondary{background:#e9eef1;color:var(--navy)}
+.preview{min-height:760px;display:flex;flex-direction:column}
+.previewbar{padding:12px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px}
+iframe{width:100%;height:100%;min-height:720px;border:0;background:white}
+.note{font-size:11px;color:#798590;margin-top:10px}
+@media(max-width:900px){main{grid-template-columns:1fr}.panel{max-height:none}.preview{min-height:650px}iframe{min-height:650px}}
+</style>
+</head>
+<body>
+<header><strong>SESGO / STUDIO</strong><span>Generador de portadas conceptuales · Abogados</span></header>
+<main>
+<section class="panel">
+  <h1>Nueva portada conceptual</h1><p class="hint">Completa los datos del prospecto, elige una dirección visual y genera los archivos del sitio.</p>
+  <h2>01 — Identidad</h2>
+  <label>Nombre del despacho o abogado</label><input id="name" value="Despacho Jurídico Rivera">
+  <div class="grid2"><div><label>Inicial / monograma</label><input id="mark" value="R" maxlength="3"></div><div><label>Subtítulo</label><input id="subtitle" value="DESPACHO JURÍDICO"></div></div>
+  <label>Ciudad y estado</label><input id="location" value="Mazatlán, Sinaloa">
+  <div class="grid2"><div><label>Teléfono visible</label><input id="phone" value="+52 669 900 0000"></div><div><label>Teléfono internacional</label><input id="phoneLink" value="+526699000000"></div></div>
+  <div class="grid2"><div><label>Correo</label><input id="email" value="contacto@despacho.com"></div><div><label>WhatsApp (solo dígitos)</label><input id="whatsapp" value="526699000000"></div></div>
+  <h2>02 — Mensaje principal</h2>
+  <label>Especialidad / enfoque</label><input id="eyebrow" value="ASESORÍA JURÍDICA ESTRATÉGICA">
+  <label>Titular principal</label><input id="title" value="Claridad legal para decisiones importantes.">
+  <label>Descripción breve</label><textarea id="description">Acompañamos a personas y empresas con soluciones jurídicas claras, atención cercana y una estrategia enfocada en proteger sus intereses.</textarea>
+  <div class="grid2"><div><label>Años de experiencia</label><input id="years" value="+10"></div><div><label>Nombre del abogado</label><input id="lawyer" value="Lic. Nombre Apellido"></div></div>
+  <label>Presentación del despacho</label><textarea id="intro">Cada situación legal merece atención y análisis. Escuchamos, comprendemos el contexto y definimos un camino de acción con información clara en cada etapa.</textarea>
+  <h2>03 — Áreas de práctica</h2>
+  <label>Servicios (uno por línea: título | descripción)</label>
+  <textarea id="services">Derecho civil | Asesoría en obligaciones, contratos y responsabilidad civil.
+Derecho familiar | Acompañamiento en asuntos familiares con sensibilidad y discreción.
+Derecho mercantil | Atención de conflictos comerciales y relaciones contractuales.</textarea>
+  <h2>04 — Dirección visual</h2>
+  <label>Paleta de color</label>
+  <div class="palette-row">
+    <button class="palette active" data-palette="classic"><span class="swatches"><i style="background:#10243a"></i><i style="background:#b68b58"></i><i style="background:#f5f6f4"></i></span>Azul / oro</button>
+    <button class="palette" data-palette="slate"><span class="swatches"><i style="background:#253746"></i><i style="background:#8ba6a0"></i><i style="background:#f1f4f2"></i></span>Pizarra</button>
+    <button class="palette" data-palette="dark"><span class="swatches"><i style="background:#17191d"></i><i style="background:#c19a6b"></i><i style="background:#f2f0ec"></i></span>Oscura</button>
+  </div>
+  <label>Composición de portada</label>
+  <div class="variant-row">
+    <button class="variant active" data-variant="split"><b>01 · Equilibrada</b><small>Texto + tarjeta visual</small></button>
+    <button class="variant" data-variant="center"><b>02 · Centrada</b><small>Mensaje protagonista</small></button>
+  </div>
+  <label>Fotografía del abogado (opcional)</label><input id="photo" type="file" accept="image/*">
+  <p class="note">La foto se incorpora al proyecto exportado. Usa únicamente imágenes autorizadas por el prospecto.</p>
+  <div class="actions"><button class="secondary" id="reset">Restablecer</button><button class="primary" id="download">Generar sitio .ZIP</button></div>
+  <p class="note" id="status">La vista previa se actualiza mientras editas.</p>
+</section>
+<section class="preview">
+  <div class="previewbar"><strong>Vista previa en vivo</strong><span>Simulación de escritorio · responsive incluido</span></div>
+  <iframe id="preview" title="Vista previa de portada"></iframe>
+</section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const defaults = {};
+["name","mark","subtitle","location","phone","phoneLink","email","whatsapp","eyebrow","title","description","years","lawyer","intro","services"].forEach(id=>defaults[id]=$(id).value);
+let palette="classic", variant="split", photoData="";
+const palettes={
+ classic:{navy:"#10243a",accent:"#b68b58",paper:"#f5f6f4",ink:"#172536"},
+ slate:{navy:"#253746",accent:"#8ba6a0",paper:"#f1f4f2",ink:"#1d2b33"},
+ dark:{navy:"#17191d",accent:"#c19a6b",paper:"#f2f0ec",ink:"#252525"}
+};
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function slug(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")||"proyecto-abogado";}
+function getData(){
+ const d={}; Object.keys(defaults).forEach(k=>d[k]=$(k).value.trim());
+ d.services=d.services.split("\n").map(line=>{const p=line.split("|");return {title:(p[0]||"Servicio").trim(),description:(p.slice(1).join("|")||"Más información sobre esta área de práctica.").trim()};}).filter(x=>x.title);
+ d.palette=palettes[palette];d.variant=variant;d.photo=photoData;
+ return d;
+}
+function makeSite(d){
+ const services=d.services.map((s,i)=>`<article class="service"><small>0${i+1}</small><h3>${esc(s.title)}</h3><p>${esc(s.description)}</p></article>`).join("");
+ const heroPhoto=d.photo?`<img class="portrait" src="${d.photo}" alt="Retrato profesional de ${esc(d.lawyer)}">`:`<div class="monogram">${esc(d.mark)}.</div>`;
+ const heroClass=d.variant==="center"?"hero center":"hero";
+ return `<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="${esc(d.description)}"><title>${esc(d.name)} | ${esc(d.subtitle)}</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body>
+<header><div class="wrap nav"><a class="brand" href="#"><b>${esc(d.mark)}</b><span><strong>${esc(d.name)}</strong><small>${esc(d.subtitle)}</small></span></a><nav><a href="#despacho">El despacho</a><a href="#servicios">Servicios</a><a href="#contacto">Contacto</a></nav></div></header>
+<main><section class="${heroClass}"><div class="wrap heroGrid"><div class="copy"><label>${esc(d.eyebrow)}</label><h1>${esc(d.title).replace(/decisiones/i,"<em>decisiones</em>")}</h1><p>${esc(d.description)}</p><a class="btn" href="#contacto">Solicitar asesoría ↗</a><div class="proof"><b>${esc(d.years)}</b><span>años de experiencia</span><i></i><span>Atención personalizada</span></div></div><div class="visual"><div class="visualcard">${heroPhoto}<div class="caption"><b>${esc(d.lawyer)}</b><span>Abogado · ${esc(d.location)}</span></div></div></div></div></section>
+<section class="intro wrap" id="despacho"><label>01 — EL DESPACHO</label><div><h2>La confianza comienza con una buena orientación.</h2><p>${esc(d.intro)}</p></div></section>
+<section class="services"><div class="wrap"><label>02 — ÁREAS DE PRÁCTICA</label><h2>Soluciones legales <em>bien enfocadas.</em></h2><div class="servicegrid">${services}</div></div></section>
+<section class="contact" id="contacto"><div class="wrap contactgrid"><div><label>03 — HABLEMOS</label><h2>Tu situación merece <em>atención profesional.</em></h2><p>Cuéntanos brevemente qué necesitas. Podemos orientarte sobre los siguientes pasos.</p></div><aside><small>CONTACTO DIRECTO</small><h3>${esc(d.lawyer)}</h3><a href="mailto:${esc(d.email)}">${esc(d.email)}</a><a href="tel:${esc(d.phoneLink)}">${esc(d.phone)}</a><a class="btn light" target="_blank" rel="noopener" href="https://wa.me/${esc(d.whatsapp)}?text=${encodeURIComponent("Hola, me gustaría recibir información sobre una asesoría jurídica.")}">Contactar por WhatsApp ↗</a><p>${esc(d.location)} · Atención con cita previa</p></aside></div></section></main>
+<footer><div class="wrap foot"><span>${esc(d.name)} · © ${new Date().getFullYear()}</span><small>Diseño web por SESGO</small></div></footer></body></html>`;
+}
+function makeCSS(d){
+ const p=d.palette;
+ return `:root{--navy:${p.navy};--accent:${p.accent};--paper:${p.paper};--ink:${p.ink};--muted:#687582;--line:#dfe4e6}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font:14px/1.6 "DM Sans",sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 44px));margin:auto}header{background:white;border-bottom:1px solid #edf0f1}.nav{height:82px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px}.brand>b{display:grid;place-items:center;width:40px;height:40px;background:var(--navy);color:white;font:700 18px Manrope}.brand span{display:grid}.brand strong{font:800 12px Manrope;letter-spacing:.1em}.brand small{font-size:8px;letter-spacing:.17em;color:var(--muted)}nav{display:flex;gap:30px;font-size:12px;font-weight:600}.hero{background:var(--paper);padding:85px 0;overflow:hidden}.heroGrid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;min-height:430px}.copy label,.intro>label,.services label,.contact label{color:var(--accent);font-size:9px;font-weight:800;letter-spacing:.18em}.copy h1{font:600 clamp(42px,5.2vw,68px)/1.08 Manrope;letter-spacing:-.055em;color:var(--navy);margin:24px 0}.copy h1 em,h2 em{color:var(--accent);font-style:normal}.copy>p,.intro p,.contact p{color:var(--muted);line-height:1.9;max-width:520px}.btn{display:inline-block;background:var(--navy);color:white;padding:15px 20px;margin-top:18px;font-size:12px;font-weight:700}.proof{display:flex;align-items:center;gap:12px;margin-top:40px;color:var(--muted);font-size:10px}.proof b{font:700 20px Manrope;color:var(--navy)}.proof i{height:28px;width:1px;background:#ccd4d8;margin:0 10px}.visual{display:grid;place-items:center}.visualcard{width:min(350px,100%);height:400px;background:linear-gradient(145deg,var(--navy),#0a1928);color:white;padding:24px;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;overflow:hidden;box-shadow:0 24px 55px #10243a25}.visualcard:before{content:"";position:absolute;width:390px;height:390px;border:1px solid #ffffff25;border-radius:50%;right:-220px;top:20px}.monogram{font:300 130px Manrope;color:#ffffffed}.portrait{width:100%;height:100%;max-height:300px;object-fit:cover;position:absolute;inset:0}.caption{position:absolute;bottom:0;left:0;right:0;padding:22px;background:linear-gradient(transparent,#081827)}.caption b,.caption span{display:block}.caption b{font:600 15px Manrope}.caption span{font-size:10px;color:#c7d0d8;margin-top:4px}.intro{padding-top:100px;padding-bottom:100px;display:grid;grid-template-columns:.6fr 1.4fr;gap:70px}.intro h2,.services h2,.contact h2{font:600 clamp(34px,4vw,48px)/1.15 Manrope;letter-spacing:-.05em;color:var(--navy);margin:0 0 20px}.services{background:var(--paper);padding:90px 0}.services h2{margin-top:20px}.servicegrid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:38px;border-top:1px solid var(--line);border-left:1px solid var(--line)}.service{padding:28px;min-height:190px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#ffffff80}.service small{color:var(--accent)}.service h3{font:700 17px Manrope;color:var(--navy);margin:28px 0 10px}.service p{font-size:12px;color:var(--muted);margin:0}.contact{background:var(--navy);padding:90px 0;color:white}.contactgrid{display:grid;grid-template-columns:1fr .8fr;gap:70px;align-items:center}.contact h2{color:white;margin-top:22px}.contact p{color:#bdc8d1}.contact aside{background:#193650;padding:30px;display:flex;flex-direction:column;align-items:flex-start}.contact aside small{color:#d2ad7d;letter-spacing:.15em;font-size:9px}.contact h3{font:700 20px Manrope}.contact aside>a:not(.btn){font-size:12px;color:#d0d9df;margin:5px 0}.light{background:white;color:var(--navy)}.contact aside p{border-top:1px solid #ffffff20;padding-top:15px;margin:20px 0 0;font-size:10px}.foot{display:flex;justify-content:space-between;padding:25px 0;font-size:10px;color:#73818c}.center .heroGrid{grid-template-columns:1fr;text-align:center;max-width:850px}.center .copy{margin:auto}.center .copy>p{margin-inline:auto}.center .proof{justify-content:center}.center .visualcard{height:280px;width:min(500px,100%)}.center .monogram{font-size:90px}.center .portrait{max-height:none}.center .intro{grid-template-columns:1fr;gap:20px}@media(max-width:760px){.nav{height:auto;min-height:72px}nav{gap:12px;font-size:10px}.heroGrid,.contactgrid,.intro{grid-template-columns:1fr;gap:35px}.hero{padding:60px 0}.visualcard{height:340px;width:min(320px,100%)}.intro{padding-top:70px;padding-bottom:70px}.servicegrid{grid-template-columns:1fr 1fr}.contact{padding:70px 0}}@media(max-width:480px){.wrap{width:calc(100% - 34px)}nav a:nth-child(1){display:none}.servicegrid{grid-template-columns:1fr}.copy h1{font-size:43px}.proof{flex-wrap:wrap}}\n`;
+}
+function updatePreview(){const d=getData();$("preview").srcdoc=makeSite(d)+"<style>"+makeCSS(d)+"</style>";}
+let timer;document.querySelectorAll("input:not([type=file]),textarea").forEach(el=>el.addEventListener("input",()=>{clearTimeout(timer);timer=setTimeout(updatePreview,120)}));
+document.querySelectorAll(".palette").forEach(b=>b.addEventListener("click",()=>{palette=b.dataset.palette;document.querySelectorAll(".palette").forEach(x=>x.classList.toggle("active",x===b));updatePreview()}));
+document.querySelectorAll(".variant").forEach(b=>b.addEventListener("click",()=>{variant=b.dataset.variant;document.querySelectorAll(".variant").forEach(x=>x.classList.toggle("active",x===b));updatePreview()}));
+$("photo").addEventListener("change",e=>{const f=e.target.files[0];if(!f)return;if(f.size>4*1024*1024){$("status").textContent="La imagen supera 4 MB. Elige una más ligera.";e.target.value="";return}const r=new FileReader();r.onload=()=>{photoData=r.result;updatePreview()};r.readAsDataURL(f)});
+$("reset").addEventListener("click",()=>{Object.entries(defaults).forEach(([k,v])=>$(k).value=v);palette="classic";variant="split";photoData="";$("photo").value="";document.querySelectorAll(".palette").forEach(x=>x.classList.toggle("active",x.dataset.palette==="classic"));document.querySelectorAll(".variant").forEach(x=>x.classList.toggle("active",x.dataset.variant==="split"));updatePreview()});
+$("download").addEventListener("click",async()=>{if(!window.JSZip){$("status").textContent="No se pudo cargar el generador ZIP. Comprueba tu conexión e inténtalo de nuevo.";return}
+ const d=getData(),zip=new JSZip(),folder=zip.folder(slug(d.name));
+ folder.file("index.html",makeSite(d));folder.file("styles.css",makeCSS(d));
+ folder.file("README.txt",`Proyecto conceptual generado por SESGO\n\nPersonaliza los datos antes de publicar. Verifica nombres, especialidades y datos de contacto con el abogado. Añade aviso de privacidad y cualquier información legal necesaria antes de convertirlo en sitio definitivo.\n\nPara previsualizar: abre index.html en un navegador.\n`);
+ $("status").textContent="Preparando archivos…";
+ try{const blob=await zip.generateAsync({type:"blob"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=slug(d.name)+".zip";a.click();URL.revokeObjectURL(a.href);$("status").textContent="Proyecto generado. Revisa el ZIP antes de compartirlo."; }
+ catch(e){$("status").textContent="No se pudo generar el ZIP. Inténtalo de nuevo.";}
+});
+updatePreview();
+</script></body></html>
