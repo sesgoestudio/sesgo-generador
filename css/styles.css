@@ -1562,3 +1562,195 @@ body {
     max-height: none;
   }
 }
+
+/* =========================================
+   RUMAA 888 — REFINAMIENTO TIPOGRÁFICO
+========================================= */
+
+body {
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.navigation a {
+  font-size: 11px;
+  letter-spacing: .4px;
+}
+
+.hero-description,
+.about-copy p,
+.section-heading p,
+.philosophy-intro p,
+.statement p,
+.contact-content p {
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 1.6px;
+}
+
+.card-content p,
+.process-item p,
+.philosophy-card p {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   AJUSTES GENERALES EN MÓVIL
+========================================= */
+
+@media (max-width: 768px) {
+
+  .hero {
+    padding-top: 48px;
+  }
+
+  .hero-title {
+    margin: 22px 0;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+
+  .hero-bottom {
+    margin-top: 25px;
+  }
+
+  .hero-visual {
+    min-height: 290px;
+    margin-top: 12px;
+  }
+
+  .section {
+    padding: 55px 7%;
+  }
+
+  .section-index {
+    margin-bottom: 25px;
+  }
+
+  .about-grid {
+    gap: 18px;
+  }
+
+  .about-heading h2,
+  .section-heading h2,
+  .philosophy-intro h2 {
+    font-size: 42px;
+    margin-top: 16px;
+  }
+
+  .about-copy {
+    padding-top: 0;
+  }
+
+  .about-copy p {
+    margin-bottom: 14px;
+  }
+
+  .section-heading {
+    margin-bottom: 28px;
+  }
+
+  .services-grid {
+    gap: 12px;
+  }
+
+  .service-card {
+    min-height: 0;
+    padding: 23px;
+    gap: 25px;
+  }
+
+  .card-content h3 {
+    margin-bottom: 12px;
+  }
+
+  .card-link {
+    margin-top: 15px;
+    padding-top: 14px;
+  }
+
+  .philosophy-intro {
+    margin-bottom: 25px;
+  }
+
+  .philosophy-grid {
+    gap: 12px;
+  }
+
+  .philosophy-card {
+    min-height: 0;
+    padding: 30px 25px;
+  }
+
+  .philosophy-symbol {
+    font-size: 85px;
+    margin-bottom: 10px;
+  }
+
+  .philosophy-card h3 {
+    margin: 8px 0 12px;
+  }
+
+  .philosophy-line {
+    margin-top: 22px;
+  }
+
+  .statement {
+    padding: 65px 7%;
+  }
+
+  .statement h2 {
+    margin: 20px 0;
+  }
+
+  .process-grid {
+    gap: 22px 15px;
+  }
+
+  .process-item h3 {
+    margin: 12px 0 8px;
+  }
+
+  .contact {
+    gap: 32px;
+  }
+
+  .contact-details {
+    padding-top: 25px;
+    gap: 20px;
+  }
+
+  .footer {
+    padding-top: 35px;
+  }
+}
+
+/* MÓVILES PEQUEÑOS */
+
+@media (max-width: 380px) {
+
+  .section {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  .philosophy-card {
+    padding: 25px 22px;
+  }
+
+  .statement {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+}
