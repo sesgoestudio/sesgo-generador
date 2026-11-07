@@ -1757,3 +1757,74 @@ body {
     padding-bottom: 55px;
   }
 }
+/* FOTOGRAFÍA DEL ABOGADO — AJUSTE ESCRITORIO */
+
+@media (min-width: 769px) {
+  .hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 0 45px;
+  }
+
+  .lawyer-image {
+    display: block;
+    width: 100%;
+    max-width: 440px;
+    max-height: 560px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center center;
+    transform: none;
+  }
+}
+/* MENÚ MÓVIL — RUMAA 888 */
+
+@media (max-width: 768px) {
+  .navigation {
+    align-items: stretch;
+    justify-content: center;
+    padding: 95px 9% 45px;
+    gap: 0;
+  }
+
+  .navigation a {
+    font-family: var(--heading);
+    font-size: clamp(29px, 8vw, 35px);
+    line-height: 1.2;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,.13);
+    transition: color .25s ease;
+  }
+
+  .navigation a:active {
+    color: var(--gold);
+  }
+
+  .navigation .nav-contact {
+    align-self: flex-start;
+    width: auto;
+    margin-top: 25px;
+    padding: 13px 22px;
+    font-family: var(--body);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .menu-toggle {
+    width: 46px;
+    height: 46px;
+  }
+
+  .menu-toggle span {
+    width: 27px;
+  }
+}
+
+@media (max-width: 380px) {
+  .navigation a {
+    font-size: 29px;
+    padding: 13px 0;
+  }
+}
