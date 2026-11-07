@@ -2574,3 +2574,10 @@ body {
     margin-bottom: 13px;
   }
 }
+.about-heading h2 span {
+  color: var(--gold);
+}
+
+.about-heading h2 .title-connector {
+  color: var(--navy);
+}
