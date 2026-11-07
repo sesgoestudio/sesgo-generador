@@ -1828,3 +1828,36 @@ body {
     padding: 13px 0;
   }
 }
+/* NOMBRE DEL ABOGADO SOBRE LA FRANJA DORADA */
+
+.image-caption {
+  position: absolute;
+  z-index: 5;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  padding: 12px 10px;
+  background: linear-gradient(
+    to top,
+    rgba(11, 27, 50, .95),
+    rgba(11, 27, 50, 0)
+  );
+}
+
+.image-caption span {
+  display: block;
+  color: #fff;
+  font-family: var(--heading);
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.image-caption small {
+  display: block;
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 2px;
+  margin-top: 3px;
+}
