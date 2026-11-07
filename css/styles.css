@@ -2590,3 +2590,43 @@ body {
 .about-heading h2 .title-connector {
   color: var(--navy);
 }
+/* ESPECIALIDADES — REFINAMIENTO */
+
+.service-card {
+  min-height: 380px;
+  padding: 32px 27px;
+  border-top: 2px solid rgba(200, 164, 93, .45);
+}
+
+.card-top {
+  align-items: flex-start;
+}
+
+.card-content h3 {
+  font-size: 38px;
+  line-height: 1.02;
+  margin-bottom: 18px;
+}
+
+.card-content p {
+  font-size: 11px;
+  line-height: 1.85;
+}
+
+.card-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    min-height: 330px;
+    padding: 28px 24px;
+  }
+
+  .card-content h3 {
+    font-size: 36px;
+  }
+}
