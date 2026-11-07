@@ -599,7 +599,10 @@ img {
 
 .card-icon {
   color: var(--gold);
-  font-size: 24px;
+  font-family: var(--heading);
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .card-content h3 {
