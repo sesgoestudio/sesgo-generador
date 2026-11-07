@@ -1828,25 +1828,51 @@ body {
     padding: 13px 0;
   }
 }
-/* NOMBRE DEL ABOGADO SOBRE LA FRANJA DORADA */
+/* NOMBRE DEL ABOGADO — POSICIÓN SOBRE LA FRANJA DORADA */
 
-.image-caption {
+.hero-visual {
+  position: relative;
+}
+
+.lawyer-frame {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  align-self: center;
+  line-height: 0;
+  z-index: 2;
+}
+
+.lawyer-frame .lawyer-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 560px;
+  object-fit: contain;
+  border-bottom: 6px solid #b89a5a;
+}
+
+.lawyer-frame .image-caption {
   position: absolute;
   z-index: 5;
+  left: 0;
+  right: 0;
   bottom: 6px;
-  left: 50%;
-  transform: translateX(-50%);
+  display: block;
   width: 100%;
+  padding: 30px 10px 8px;
   text-align: center;
-  padding: 12px 10px;
+  line-height: 1.2;
   background: linear-gradient(
     to top,
-    rgba(11, 27, 50, .95),
+    rgba(11, 27, 50, .96),
     rgba(11, 27, 50, 0)
   );
 }
 
-.image-caption span {
+.lawyer-frame .image-caption span {
   display: block;
   color: #fff;
   font-family: var(--heading);
@@ -1854,10 +1880,22 @@ body {
   font-weight: 600;
 }
 
-.image-caption small {
+.lawyer-frame .image-caption small {
   display: block;
   color: var(--gold);
+  font-family: var(--body);
   font-size: 9px;
   letter-spacing: 2px;
-  margin-top: 3px;
+  margin-top: 5px;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .lawyer-frame {
+    max-width: 330px;
+  }
+
+  .lawyer-frame .image-caption span {
+    font-size: 22px;
+  }
 }
