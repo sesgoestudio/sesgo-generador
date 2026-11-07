@@ -2508,3 +2508,16 @@ body {
     background: var(--gold);
   }
 }
+/* MENOS ESPACIO ENTRE SECCIONES EN MÓVIL */
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .statement {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
