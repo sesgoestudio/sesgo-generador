@@ -1185,16 +1185,17 @@ img {
     top: 48%;
   }
 
-  .lawyer-image {
-    max-width: 330px;
-    max-height: 390px;
-    width: auto;
-    max-width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center bottom;
-  }
-
+.lawyer-image {
+  display: block;
+  width: 100%;
+  max-width: 330px;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: center bottom;
+  border-bottom: 5px solid var(--gold);
+  flex-shrink: 1;
+}
   .visual-number {
     font-size: 110px;
     bottom: 0;
