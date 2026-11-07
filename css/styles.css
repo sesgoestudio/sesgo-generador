@@ -1439,3 +1439,65 @@ img {
   }
 
 }
+/* =========================================
+   CONTROL DE ESPACIOS EN PANTALLAS GRANDES
+========================================= */
+
+@media (min-width: 1200px) {
+
+  .header {
+    padding-left: clamp(28px, 7vw, 100px);
+    padding-right: clamp(28px, 7vw, 100px);
+  }
+
+  .navigation {
+    gap: clamp(14px, 2vw, 30px);
+  }
+
+  .hero {
+    grid-template-columns:
+      minmax(0, 680px)
+      minmax(0, 520px);
+    justify-content: center;
+    column-gap: clamp(24px, 4vw, 64px);
+    padding-left: clamp(28px, 7vw, 100px);
+    padding-right: clamp(28px, 7vw, 100px);
+  }
+
+  .section,
+  .statement {
+    padding-left: clamp(28px, 7vw, 100px);
+    padding-right: clamp(28px, 7vw, 100px);
+  }
+
+  .contact {
+    grid-template-columns:
+      minmax(0, 700px)
+      minmax(280px, 420px);
+    justify-content: center;
+    gap: clamp(30px, 5vw, 70px);
+  }
+
+  .footer {
+    padding-left: clamp(28px, 7vw, 100px);
+    padding-right: clamp(28px, 7vw, 100px);
+  }
+
+}
+
+/* EVITAR DESBORDAMIENTOS */
+
+.hero-content,
+.hero-visual,
+.about-grid,
+.services-grid,
+.philosophy-grid,
+.process-grid,
+.contact-content,
+.contact-details {
+  min-width: 0;
+}
+
+img {
+  max-width: 100%;
+}
