@@ -2153,3 +2153,13 @@ body {
   }
 
 }
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: clamp(42px, 10vw, 54px);
+    line-height: 1.08;
+    letter-spacing: -1.2px;
+    max-width: 100%;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+}
