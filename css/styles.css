@@ -1899,3 +1899,257 @@ body {
     font-size: 22px;
   }
 }
+/* =========================================
+   RUMAA 888 — JERARQUÍA TIPOGRÁFICA MÓVIL
+========================================= */
+
+@media (max-width: 768px) {
+
+  /* TEXTOS GENERALES */
+
+  body {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  p {
+    overflow-wrap: break-word;
+  }
+
+  .eyebrow {
+    font-size: 9px;
+    line-height: 1.6;
+    letter-spacing: 1.2px;
+    max-width: 100%;
+  }
+
+  /* PORTADA */
+
+  .hero-title {
+    font-size: clamp(48px, 11vw, 64px);
+    line-height: 1;
+    letter-spacing: -1px;
+    margin: 24px 0;
+  }
+
+  .hero-description {
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.75;
+    margin-bottom: 25px;
+  }
+
+  .hero-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 8px;
+    line-height: 1.6;
+  }
+
+  /* TÍTULOS DE SECCIÓN */
+
+  .about-heading h2,
+  .section-heading h2,
+  .philosophy-intro h2 {
+    font-size: clamp(35px, 9vw, 43px);
+    line-height: 1.08;
+    letter-spacing: -.5px;
+    margin: 18px 0;
+  }
+
+  .section-index {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+  }
+
+  /* NOSOTROS */
+
+  .about-copy .lead {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .about-copy p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 17px;
+  }
+
+  .about-copy .text-link {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 10px;
+    line-height: 1.7;
+  }
+
+  /* ESPECIALIDADES */
+
+  .section-heading > p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 16px;
+  }
+
+  .service-card {
+    padding: 25px 23px;
+    gap: 20px;
+  }
+
+  .card-top {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+  }
+
+  .card-content h3 {
+    font-size: 34px;
+    line-height: 1.05;
+    margin-bottom: 15px;
+  }
+
+  .card-content p {
+    font-size: 14px;
+    line-height: 1.75;
+    max-width: 100%;
+  }
+
+  .card-link {
+    font-size: 9px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+  }
+
+  /* MISIÓN Y VISIÓN */
+
+  .philosophy-intro p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .philosophy-card {
+    padding: 30px 25px;
+  }
+
+  .philosophy-card .eyebrow {
+    font-size: 9px;
+  }
+
+  .philosophy-card h3 {
+    font-size: 38px;
+    line-height: 1.1;
+    margin: 12px 0 16px;
+  }
+
+  .philosophy-card p {
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 100%;
+  }
+
+  /* FRASE INSTITUCIONAL */
+
+  .statement h2 {
+    font-size: clamp(37px, 10vw, 48px);
+    line-height: 1.1;
+    margin: 22px 0;
+  }
+
+  .statement p {
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 100%;
+  }
+
+  /* PROCESO DE ATENCIÓN */
+
+  .process .section-heading h2 {
+    font-size: 38px;
+    line-height: 1.1;
+  }
+
+  .process .section-heading p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .process-item h3 {
+    font-size: 23px;
+    line-height: 1.15;
+  }
+
+  .process-item p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  /* CONTACTO */
+
+  .contact-content h2 {
+    font-size: clamp(38px, 10vw, 48px);
+    line-height: 1.08;
+    margin: 20px 0;
+  }
+
+  .contact-content p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .contact-details span {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .contact-details a,
+  .contact-details p {
+    font-size: 22px;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  /* BOTONES Y ENLACES */
+
+  .btn-primary {
+    font-size: 10px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+  }
+
+  /* PIE DE PÁGINA */
+
+  .footer-slogan {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .footer-bottom {
+    font-size: 8px;
+    line-height: 1.8;
+  }
+}
+
+/* AJUSTES PARA CELULARES MUY PEQUEÑOS */
+
+@media (max-width: 380px) {
+
+  .hero-title {
+    font-size: 46px;
+  }
+
+  .about-heading h2,
+  .section-heading h2,
+  .philosophy-intro h2 {
+    font-size: 35px;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-content h2 {
+    font-size: 38px;
+  }
+
+}
