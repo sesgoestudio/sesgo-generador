@@ -2630,3 +2630,27 @@ body {
     font-size: 36px;
   }
 }
+/* AJUSTES MÓVILES — ESPECIALIDADES */
+
+/* Mantener "áreas clave" juntas en dos líneas */
+@media (max-width: 768px) {
+  .section-heading h2 span {
+    display: block;
+    white-space: nowrap;
+  }
+}
+
+/* Reproducir el efecto de las tarjetas al tocarlas */
+@media (hover: none) and (pointer: coarse) {
+  .service-card:active,
+  .service-card:focus-within {
+    transform: translateY(-9px);
+    border-color: #E3D6B9;
+    box-shadow: 0 20px 50px rgba(11, 27, 50, .07);
+  }
+
+  .service-card:active::before,
+  .service-card:focus-within::before {
+    height: 100%;
+  }
+}
