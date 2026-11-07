@@ -1508,3 +1508,57 @@ img {
   border-bottom: 6px solid #b89a5a;
   box-sizing: border-box;
 }
+/* CORRECCIÓN DE DESBORDAMIENTO HORIZONTAL */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.hero,
+.hero-visual,
+.hero-content {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.hero-visual {
+  overflow: hidden;
+}
+
+.lawyer-image {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  max-height: 580px;
+  object-fit: contain;
+  flex-shrink: 1;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-visual {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .lawyer-image {
+    width: 100%;
+    max-width: 330px;
+    height: auto;
+    max-height: none;
+  }
+}
