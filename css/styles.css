@@ -1,0 +1,438 @@
+/* =================================
+   VARIABLES DE IDENTIDAD
+================================= */
+
+:root {
+    --navy: #0B1B32;
+    --gold: #C8A45D;
+    --white: #FFFFFF;
+    --gray: #F3F4F6;
+    --text: #333333;
+
+    --heading: 'Cormorant Garamond', serif;
+    --body: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body);
+    color: var(--text);
+    background: var(--white);
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+.header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--white);
+    font-family: var(--heading);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.logo small {
+    display: block;
+    font-family: var(--body);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.navigation {
+    display: flex;
+    gap: 30px;
+}
+
+.navigation a {
+    color: var(--white);
+    font-size: 12px;
+    transition: .3s;
+}
+
+.navigation a:hover {
+    color: var(--gold);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+
+/* =================================
+   ELEMENTOS GENERALES
+================================= */
+
+.section {
+    padding: 100px 8%;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.gold-line {
+    width: 55px;
+    height: 2px;
+    background: var(--gold);
+    margin: 25px 0;
+}
+
+h1, h2, h3 {
+    font-family: var(--heading);
+}
+
+
+/* =================================
+   HERO
+================================= */
+
+.hero {
+    min-height: 650px;
+    background: var(--navy);
+    color: var(--white);
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    padding: 70px 8%;
+    gap: 50px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 6vw, 78px);
+    line-height: .98;
+    margin-top: 25px;
+    font-weight: 600;
+}
+
+.hero p {
+    max-width: 430px;
+    line-height: 1.9;
+    color: #D6DCE5;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 17px 27px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.btn-primary:hover {
+    background: var(--white);
+}
+
+
+/* =================================
+   NOSOTROS
+================================= */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+}
+
+.about-content h2,
+.section-heading h2 {
+    font-size: 48px;
+    color: var(--navy);
+    margin: 18px 0;
+}
+
+.about-content p {
+    line-height: 1.9;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+
+/* =================================
+   SERVICIOS
+================================= */
+
+.services {
+    background: var(--gray);
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 50px;
+}
+
+.section-heading p {
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 38px;
+    border-bottom: 2px solid transparent;
+    transition: .3s;
+}
+
+.service-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+
+.service-number {
+    color: var(--gold);
+    font-size: 14px;
+}
+
+.service-card h3 {
+    color: var(--navy);
+    font-size: 29px;
+    margin: 20px 0 10px;
+}
+
+.service-card p {
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* =================================
+   METODOLOGÍA
+================================= */
+
+.process {
+    background: var(--white);
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.process-grid div {
+    border-top: 1px solid var(--gold);
+    padding-top: 25px;
+}
+
+.process-grid span {
+    color: var(--gold);
+}
+
+.process-grid h3 {
+    color: var(--navy);
+    font-size: 27px;
+    margin: 15px 0;
+}
+
+.process-grid p {
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* =================================
+   CONTACTO
+================================= */
+
+.contact {
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 48px;
+    margin: 20px 0;
+}
+
+.contact p {
+    line-height: 2;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.contact .btn-primary {
+    margin: 20px 0;
+}
+
+.contact a:not(.btn-primary) {
+    color: var(--gold);
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+.footer {
+    background: #071323;
+    color: var(--white);
+    padding: 45px 8%;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 11px;
+    margin: 15px 0;
+    color: #D6DCE5;
+}
+
+.footer > a:not(.logo) {
+    color: var(--gold);
+    font-size: 12px;
+}
+
+
+/* =================================
+   WHATSAPP FLOTANTE
+================================= */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: var(--gold);
+    color: var(--navy);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    z-index: 100;
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 768px) {
+
+    .header {
+        padding: 20px 6%;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        color: var(--gold);
+        border: none;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    .navigation {
+        display: none;
+        position: absolute;
+        top: 85px;
+        left: 0;
+        width: 100%;
+        background: var(--navy);
+        padding: 25px;
+        flex-direction: column;
+        z-index: 100;
+    }
+
+    .navigation.active {
+        display: flex;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 65px 7%;
+    }
+
+    .hero h1 {
+        font-size: 51px;
+    }
+
+    .hero-image img {
+        height: 350px;
+    }
+
+    .section {
+        padding: 70px 7%;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact h2 {
+        font-size: 38px;
+    }
+
+}
+
+@media (max-width: 420px) {
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
