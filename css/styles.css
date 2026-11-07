@@ -2163,3 +2163,260 @@ body {
     word-break: normal;
   }
 }
+
+/* =========================================
+   RUMAA 888 — SISTEMA UNIFICADO DE BOTONES
+========================================= */
+
+/* BOTONES PRINCIPALES */
+
+.btn-primary {
+  position: relative;
+  min-height: 56px;
+  padding: 0 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  background: var(--gold);
+  color: var(--navy);
+  border: 1px solid var(--gold);
+
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  line-height: 1.4;
+
+  transition:
+    background .3s ease,
+    color .3s ease,
+    border-color .3s ease,
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--gold-light);
+  border-color: var(--gold-light);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(200,164,93,.13);
+}
+
+.btn-primary span {
+  font-size: 16px;
+  transition: transform .3s ease;
+}
+
+.btn-primary:hover span {
+  transform: translate(3px, -3px);
+}
+
+
+/* CONTACTO DEL MENÚ */
+
+.navigation .nav-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--gold);
+  border: 1px solid rgba(200,164,93,.7);
+  padding: 13px 22px;
+
+  transition:
+    background .3s ease,
+    color .3s ease,
+    border-color .3s ease;
+}
+
+.navigation .nav-contact:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+}
+
+
+/* ENLACES SECUNDARIOS */
+
+.text-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+
+  padding: 0 0 9px;
+  border: 0;
+  transition: color .3s ease;
+}
+
+.text-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(.45);
+  transform-origin: left;
+  transition: transform .3s ease;
+}
+
+.text-link:hover {
+  color: var(--gold-light);
+}
+
+.text-link:hover::after {
+  transform: scaleX(1);
+}
+
+.dark-link {
+  color: var(--navy);
+}
+
+.dark-link:hover {
+  color: #9B793D;
+}
+
+
+/* BOTONES DE ESPECIALIDADES */
+
+.card-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  width: 100%;
+  padding: 17px 0 5px;
+
+  color: var(--navy);
+  border-top: 1px solid rgba(11,27,50,.18);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+
+  transition:
+    color .3s ease,
+    border-color .3s ease,
+    padding .3s ease;
+}
+
+.card-link:hover {
+  color: #A17E3D;
+  border-color: var(--gold);
+  padding-left: 6px;
+}
+
+
+/* WHATSAPP FLOTANTE */
+
+.whatsapp-float {
+  width: 60px;
+  height: 60px;
+  border: 2px solid rgba(255,255,255,.9);
+  border-radius: 50%;
+
+  box-shadow: 0 6px 22px rgba(0,0,0,.22);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(37,211,102,.25);
+}
+
+.whatsapp-float:active {
+  transform: scale(.96);
+}
+
+
+/* BOTÓN DEL MENÚ MÓVIL */
+
+.menu-toggle {
+  border-radius: 2px;
+  transition: background .25s ease;
+}
+
+.menu-toggle:active {
+  background: rgba(200,164,93,.12);
+}
+
+
+/* ACCESIBILIDAD Y ESTADOS DE INTERACCIÓN */
+
+.btn-primary:focus-visible,
+.text-link:focus-visible,
+.card-link:focus-visible,
+.nav-contact:focus-visible,
+.whatsapp-float:focus-visible,
+.menu-toggle:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 5px;
+}
+
+
+/* AJUSTES PARA MÓVILES */
+
+@media (max-width: 768px) {
+
+  .btn-primary {
+    width: 100%;
+    max-width: 340px;
+    min-height: 56px;
+    padding: 0 21px;
+    font-size: 10px;
+  }
+
+  .hero-actions {
+    gap: 22px;
+  }
+
+  .text-link {
+    font-size: 9px;
+    line-height: 1.7;
+  }
+
+  .card-link {
+    min-height: 42px;
+    font-size: 9px;
+  }
+
+  .whatsapp-float {
+    width: 56px;
+    height: 56px;
+  }
+
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+  }
+
+}
+
+
+/* REDUCIR ANIMACIONES SI EL USUARIO LO PREFIERE */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .btn-primary,
+  .text-link,
+  .text-link::after,
+  .card-link,
+  .whatsapp-float {
+    transition: none;
+  }
+
+}
