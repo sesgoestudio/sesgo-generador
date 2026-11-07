@@ -2420,3 +2420,91 @@ body {
   }
 
 }
+
+/* =========================================
+   RUMAA 888 — BOTONES MODERNOS
+========================================= */
+
+.btn-primary,
+.navigation .nav-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border-radius: 999px;
+}
+
+.btn-primary {
+  min-height: 54px;
+  padding: 0 30px;
+}
+
+.navigation .nav-contact {
+  padding: 13px 24px;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: fit-content;
+  padding: 13px 19px;
+  margin-top: 25px;
+  border: 1px solid #D8C49B;
+  border-radius: 999px;
+  transition: background .3s, color .3s, border-color .3s;
+}
+
+.card-link:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+}
+
+.btn-primary svg,
+.card-link svg,
+.text-link svg,
+.navigation .nav-contact svg {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 15px;
+  display: inline-block;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform .25s ease;
+}
+
+.btn-primary:hover svg,
+.card-link:hover svg,
+.text-link:hover svg,
+.navigation .nav-contact:hover svg {
+  transform: translate(3px, -2px);
+}
+
+/* FLECHAS Y BOTONES EN MÓVIL */
+
+@media (max-width: 768px) {
+  .btn-primary {
+    min-height: 52px;
+    padding: 0 24px;
+    font-size: 10px;
+  }
+
+  .card-link {
+    font-size: 9px;
+    padding: 12px 17px;
+  }
+
+  .menu-toggle {
+    z-index: 1003;
+  }
+
+  .menu-toggle.active span {
+    height: 2px;
+    background: var(--gold);
+  }
+}
