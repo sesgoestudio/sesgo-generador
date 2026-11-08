@@ -2654,3 +2654,98 @@ body {
     height: 100%;
   }
 }
+
+/* CONFIANZA */
+
+.trust-section {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.trust-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.trust-heading {
+  max-width: 780px;
+  margin-bottom: 65px;
+}
+
+.trust-heading .eyebrow {
+  color: var(--gold);
+}
+
+.trust-heading h2 {
+  color: var(--white);
+  font-family: var(--heading);
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 500;
+  line-height: 1.08;
+  margin-top: 24px;
+}
+
+.trust-heading h2 span {
+  color: var(--gold);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.trust-card {
+  padding: 30px 25px;
+  border-top: 1px solid rgba(255,255,255,.3);
+}
+
+.trust-number {
+  display: block;
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 38px;
+}
+
+.trust-card h3 {
+  color: var(--white);
+  font-family: var(--heading);
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.trust-card p {
+  color: rgba(255,255,255,.72);
+  font-size: 13px;
+  line-height: 1.9;
+  max-width: 310px;
+}
+
+@media (max-width: 768px) {
+  .trust-heading {
+    margin-bottom: 35px;
+  }
+
+  .trust-heading h2 {
+    font-size: 40px;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .trust-card {
+    padding: 24px 5px;
+  }
+
+  .trust-number {
+    margin-bottom: 20px;
+  }
+
+  .trust-card h3 {
+    font-size: 23px;
+  }
+}
